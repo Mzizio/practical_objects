@@ -5,7 +5,6 @@
 const assert = require('assert');
 
 //Use these two shopping lists to test.
-
 assert.equal(shoppingList([
     { itemName : 'Bread', price : 11.00 },
     { itemName : 'Milk', price : 7.00 },
@@ -19,7 +18,6 @@ assert.equal(shoppingList([
     { itemName : 'Cheese', price : 23.00 },
     { itemName : 'Bread', price : 9.50 }
 ]),58);
-
 
 //returns the shopping list totalprice;
 function shoppingList(List){
