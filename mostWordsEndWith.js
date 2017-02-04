@@ -1,8 +1,8 @@
 /*Created By:Name:Mxolisi D Mtshali
-            Date:02-02-2017;
+             Date:02-02-2017;
 */
 //import assert function to test your functions;
-//const assert = require('assert');
+const assert = require('assert');
 
 
 /*function testing using assert function;
@@ -11,6 +11,7 @@ assert.equal(mostWordsEndWith(),);
 //sentence tested and passed;
 var sentence = 'Down by the river there is a man that quiver and shiver, but he needs to deliver a packet that he think is a big racket and a packet of of gum.';
 mostWordsEndWith(sentence);
+
 //function returning sequence of words with the most appearing end character;
 function  mostWordsEndWith(sentence){
   //declaring and initialisation of necessary variables to be used;
