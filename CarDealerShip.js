@@ -34,7 +34,7 @@ the most popular color car for any given town mostPopularColor('townname')*/
             Date:05-02-2017;
 */
 //import assert function to test your functions;
-//const assert = require('assert');
+const assert = require('assert');
 
 //data used for testing
 var cars = [ {
@@ -254,7 +254,6 @@ function nissansFromCK(cars){
       car_count=nissan_obj[car];
       }
     }
-  //console.log("The quantity of Nissan's  from Malmesbury  is:"+car_count);
   //returns number of nissan from Malmesbury;
   return car_count;
   }
@@ -284,22 +283,17 @@ function nissansFromCK(cars){
     }
    
     switch(town){
-    	//return"Malmesbury  has the most blue cars";
+   
     case 'CK':return "Malmesbury";
     break;
-    //return"Paarl  has the most blue cars";
     case 'CJ':return"Paarl";
     break;
-    //return "Bellville has the most blue cars";
     case 'CY':return "Bellville";
-	break;
-	//return "Stellenbosch has the most blue cars";
+    break;
     case 'CL':return "Stellenbosch";
     break;
-    //return "Cape Town  has the most blue cars";
     case 'CA':return "Cape Town";
     break;
-    //return "Kuilsriver  has the most blue cars";
     case 'CF':return "Kuilsriver";
     break;
     default:return "There is no car @ this town";
@@ -310,15 +304,15 @@ function nissansFromCK(cars){
 
  //returns the fewest orange cars from cars object;
  function fewestOrangeCars(cars){
- 	//initialisation and declaration of necessarily variables;
-  	var orange_car_obj={};
-    var over_1oc=[];
-    var least_oc=1;
-  	var town="";
-
-  	for (var i = 0; i < cars.length; i++) {
-  		//checks for color; 
-  		if (cars[i].color==="orange" && cars[i].reg_number.split(" ")[0] in orange_car_obj) {
+	 //initialisation and declaration of necessarily variables;
+	 var orange_car_obj={};
+	 var over_1oc=[];
+	 var least_oc=1;
+  	 var town="";
+	 
+	 for (var i = 0; i < cars.length; i++) {
+		 //checks for color; 
+		 if (cars[i].color==="orange" && cars[i].reg_number.split(" ")[0] in orange_car_obj) {
   			//if obj exist continue ;
   			orange_car_obj[cars[i].reg_number.split(" ")[0]]++;
   		}else{
@@ -337,28 +331,18 @@ function nissansFromCK(cars){
       }
     	
     }
-    //console.log("All this Towns "+over_1oc+" have  the same quantirty of fewest orange cars which is: "+least_oc);
-    //returns fewest quantity of orange color;
-    return least_oc;
-
     switch(town){
-    //console.log("Malmesbury  has the fewest orange cars of quantity: "+least_oc);
-    case 'CK':return least_oc;
+    case 'CK':return "Malmesbury";
     break;
-    //console.log("Paarl  has the fewest orange cars of quantity: "+least_oc);
-    case 'CJ':return least_oc;
+    case 'CJ':return "Paarl";
     break;
-    //console.log( "Bellville has the fewest orange cars of quantity: "+least_oc);
-    case 'CY':return least_oc;
+    case 'CY':return "Bellville";
     break;
-    //console.log("Stellenbosch has the fewest orange cars of quantity: "+least_oc);
-    case 'CL':return least_oc;
+    case 'CL':return "Stellenbosch";
     break;
-    //console.log( "Cape Town  has the fewest orange cars of quantity: "+least_oc);
-    case 'CA':return least_oc;
+    case 'CA':return "Cape Town";
     break;
-    //console.log( "Kuilsriver  has the fewest orange cars of quantity: "+least_oc);
-    case 'CF':return least_oc;
+    case 'CF':return "Kuilsriver";
     break;
     default:return "There is no car @ this town"+town;
 
@@ -390,8 +374,7 @@ function mostPopularModel(cars){
         model_count=model_obj[model];
         pop_model=model;
         }
-      }
- //console.log(pop_model+" is the most popular model car overall");
+   }
  //returns the most popular model car overall;
  return pop_model;
 }
@@ -424,11 +407,9 @@ function mostPopularCL(cars){
                 over1_pop_cl.push(cl_pop_mdl);
             }
         }
-        //console.log(cl_pop_mdl+" is the first most popular model car in Stellenbosch");
         //returns one of most popular model car in Stellenbosch;
         return cl_pop_mdl;
-        //console.log("The most popular model car in Stellenbosch are: "+over1_pop_cl);
-      //return over1_pop_cl;
+      
     }
 
 //returns least popular model car in Kuilsriver;
@@ -458,37 +439,34 @@ function leastPopularCF(cars){
                 over1_pop_cl.push(cl_pop_mdl);
             }
         }
-        //console.log(cl_pop_mdl+" is the first most popular model car in Stellenbosch");
-        //the first most popular model car in Stellenbosch;
+        //the first most popular model car in Stellenbosch if more one car are popular;
          return cl_pop_mdl;
-        //console.log("The most popular model car in Stellenbosch are: "+over1_pop_cl);
-      //return over1_pop_cl;
     }
 
 //returns all the cars for any given town
 function carsForTown(cars,townname){
 	//local variables;
-	     var car_city_obj={};
+         var car_city_obj={};
          var all_cars=[];
          var reg_num="";
-
-    switch(townname){
-    case "Malmesbury":return reg_num='CK';
-    break;
-    case   "Paarl"   :return reg_num='CJ';
-            break;
-    case "Bellville" :return reg_num='CY';
-            break;
-    case "Stellenbosch":return reg_num='CL';
-            break;
-    case "Cape Town" :return reg_num='CA';
-            break;
-    case "Kuilsriver":return reg_num='CF' ;
-            break;
-    default:return "There is no car @ this town"+townname;
-}
-
-for (var i = 0; i < cars.length; i++) {
+	
+	switch(townname){
+		case "Malmesbury":return reg_num='CK';
+		break;
+    		case   "Paarl"   :return reg_num='CJ';
+            	break;
+    		case "Bellville" :return reg_num='CY';
+            	break;
+    		case "Stellenbosch":return reg_num='CL';
+            	break;
+    		case "Cape Town" :return reg_num='CA';
+            	break;
+    		case "Kuilsriver":return reg_num='CF' ;
+            	break;
+    		default:return "There is no car @ this town"+townname;
+	}
+	
+	for (var i = 0; i < cars.length; i++) {
 	//confirms that is the town indeed a given town;
 	if(cars[i].make in car_city_obj && cars[i].reg_number.split(' ')[0]===reg_num){
 	//make already exist continue;
@@ -502,7 +480,6 @@ for (var i = 0; i < cars.length; i++) {
   for(car in car_city_obj ){
   all_cars.push(car);
   }
-//return "Cars that belongs to "+townname+" are :"+all_cars;
 //array off cars that belongs to the given town;
 return all_cars;
 }
@@ -510,57 +487,57 @@ return all_cars;
 //returns all the cars for a specific color for a specific town; 
 function numberOfCars(cars,color,townname){
 	//local variables;
-		var car_city_obj={};
-		var all_cars=[];
-		var reg_num="";
-		var count=0;
-
-		switch(townname){
-    	case "Malmesbury":return reg_num='CK';
-    	break;
-    	case   "Paarl"   :return reg_num='CJ';
-        break;
-    	case "Bellville" :return reg_num='CY';
-        break;
-    	case "Stellenbosch":return reg_num='CL';
-        break;
-    	case "Cape Town" :return reg_num='CA';
-        break;
-    	case "Kuilsriver":return reg_num='CF' ;
-        break;
+	var car_city_obj={};
+	var all_cars=[];
+	var reg_num="";
+	var count=0;
+	
+	switch(townname){
+		case "Malmesbury":return reg_num='CK';
+    		break;
+    		case   "Paarl"   :return reg_num='CJ';
+        	break;
+    		case "Bellville" :return reg_num='CY';
+        	break;
+    		case "Stellenbosch":return reg_num='CL';
+        	break;
+    		case "Cape Town" :return reg_num='CA';
+        	break;
+    		case "Kuilsriver":return reg_num='CF' ;
+        	break;
 		default:return "There is no car @ this town"+townname;
-}
-
-for (var i = 0; i < cars.length; i++) {
-	//confirm color model and car;
-	if(cars[i].make in car_city_obj && cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color){
-	//make already exist continue;
+       }
+	
+	for (var i = 0; i < cars.length; i++) {
+		//confirm color model and car;
+		if(cars[i].make in car_city_obj && cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color){
+		//make already exist continue;
 		car_city_obj[cars[i].make]++;
-	}else if (cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color) {
-	//make for the first time;
+		}else if (cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color) {
+		//make for the first time;
 		car_city_obj[cars[i].make]=1;
+		}
 	}
+	
+	//creates array of all cars with the specified color ;
+	for(car in car_city_obj ){
+		all_cars.push(car);
+	}
+	//counts cars of specific color;
+	for(var i=0;i<all_cars.length;i++){
+		count++;
+	}
+	//returns all cars of specified color and town;
+	return count;
 }
-//creates array of all cars with the specified color ;
-for(car in car_city_obj ){
-  all_cars.push(car);
-  }
-  //counts cars of specific color;
-  for(var i=0;i<all_cars.length;i++){
-    count++;
-  }
-//return "Cars that belongs to "+townname+" which are  "+color+" in color are: "+all_cars;
-//returns all cars of specified color and town;
-return count;
 
-}
-//the cars for a specific color & model for a specific town numberOfCarsPerModel('blue', 'model', 'town name')
+//returns the cars for a specific color & model for a specific town 
 function numberOfCarsPerModel(cars,color, model, townname){
 		var car_city_obj={};
 		var all_cars=[];
 		var reg_num="";
-
-		switch(townname){
+	
+	switch(townname){
     	case "Malmesbury":return reg_num='CK';
     	break;
     	case   "Paarl"   :return reg_num='CJ';
@@ -575,69 +552,68 @@ function numberOfCarsPerModel(cars,color, model, townname){
         break;
     	default:return "There is no car @ this town";
 }
-
-for (var i = 0; i < cars.length; i++) {
-	if(cars[i].make in car_city_obj && cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color && cars[i].model===model){
-		car_city_obj[cars[i].make]++;
-	}else if (cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color && cars[i].model===model) {
-		car_city_obj[cars[i].make]=1;
+	
+	for (var i = 0; i < cars.length; i++) {
+		//confirms model and color;
+		if(cars[i].make in car_city_obj && cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color && cars[i].model===model){
+			//car already exist continue;
+			car_city_obj[cars[i].make]++;
+		}else if (cars[i].reg_number.split(' ')[0]===reg_num && cars[i].color===color && cars[i].model===model) {
+			//first time car;
+			car_city_obj[cars[i].make]=1;
+		}
 	}
+	//creates array of specified car;
+	for(car in car_city_obj ){
+		all_cars.push(car);
+	}
+	//counts cars of specific color & model;
+	for(var i=0;i<all_cars.length;i++){
+		count++;
+	}
+	//return Cars that belongs to townname which are  have specific color and the model type;
+	return count;
 }
-for(car in car_city_obj ){
-  all_cars.push(car);
-  }
-  //counts cars of specific color & model;
-  for(var i=0;i<all_cars.length;i++){
-    count++;
-  }
-//return "Cars that belongs to "+townname+" which are  "+color+" in color and the model type is "+model+" are "+all_cars;
-return count;
-
-
-}
-
 //returns the most popular color car for any given town 
 function mostPopularColor(cars,townname){
 	//local variables;
-		var car_city_obj={};
+	var car_city_obj={};
         var all_cars=[];
         var reg_num="";
-
-    switch(townname){
-    case "Malmesbury":return reg_num='CK';
-    break;
-    case   "Paarl"   :return reg_num='CJ';
-            break;
-    case "Bellville" :return reg_num='CY';
-            break;
-    case "Stellenbosch":return reg_num='CL';
-            break;
-    case "Cape Town" :return reg_num='CA';
-            break;
-    case "Kuilsriver":return reg_num='CF' ;
-            break;
-    default:return "There is no car @ this town: "+townname;
-}
-
-for (var i = 0; i < cars.length; i++) {
-	//confirms color and townname;
-	if(cars[i].color in car_city_obj && cars[i].reg_number.split(' ')[0]===reg_num){
-	//color already exist continue;
-		car_city_obj[cars[i].color]++;
-	}else if (cars[i].reg_number.split(' ')[0]===reg_num) {
-	//color for first time;
-		car_city_obj[cars[i].color]=1;
+	
+	switch(townname){
+		case "Malmesbury":return reg_num='CK';
+    		break;
+    		case   "Paarl"   :return reg_num='CJ';
+            	break;
+    		case "Bellville" :return reg_num='CY';
+		break;
+    		case "Stellenbosch":return reg_num='CL';
+            	break;
+    		case "Cape Town" :return reg_num='CA';
+            	break;
+    		case "Kuilsriver":return reg_num='CF' ;
+            	break;
+    		default:return "There is no car @ this town: "+townname;
+       }
+	
+	for (var i = 0; i < cars.length; i++) {
+		//confirms color and townname;
+		if(cars[i].color in car_city_obj && cars[i].reg_number.split(' ')[0]===reg_num){
+			//color already exist continue;
+			car_city_obj[cars[i].color]++;
+		}else if (cars[i].reg_number.split(' ')[0]===reg_num) {
+			//color for first time;
+			car_city_obj[cars[i].color]=1;
+		}
 	}
-}
-//creates array of popular color from the specified city;
-  for(color in car_city_obj ){
-  if(car_city_obj[color]>color_count){
-     color_count=car_city_obj[color];
-     pop_color=color;
-  }
-}
-//return "Cars that belongs to "+townname+" mostly have colors namely :"+all_cars;
-//returns mostly popular colors namely
-return pop_color;
-
+	//creates array of popular color from the specified city;
+	for(color in car_city_obj ){
+		if(car_city_obj[color]>color_count){
+			color_count=car_city_obj[color];
+			pop_color=color;
+		}
+	}
+	//returns mostly popular colors namely
+	return pop_color;
 }
